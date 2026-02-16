@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kypo — Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #007A7A;
+      --teal-light: #B2DFDB;
+      --teal-dim:   #004D4D;
+      --bg:         #F7FBFA;
+      --surface:    #FFFFFF;
+      --text:       #1A1A1A;
+      --text-muted: #78909C;
+      --border:     #E0E8E6;
+      --radius:     16px;
+      --radius-sm:  12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:         #0A0A0A;
+        --surface:    #141414;
+        --text:       #E0E0E0;
+        --text-muted: #757575;
+        --border:     #2A2A2A;
+        --teal:       #009999;
+        --teal-light: #003D39;
+        --teal-dim:   #003333;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links { display: flex; gap: 4px; }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: all 0.15s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--teal);
+      background: var(--teal-light);
+    }
+
+    select#lang {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 12px;
+      cursor: pointer;
+      appearance: auto;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+
+    .doc-section { display: none; }
+    .doc-section.visible { display: block; }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      color: var(--teal);
+    }
+
+    .effective {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 40px 0 16px;
+      letter-spacing: -0.25px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--teal-light);
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+    }
+
+    p, li { margin-bottom: 12px; }
+
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    strong { font-weight: 600; }
+
+    .highlight {
+      background: var(--teal-light);
+      border-left: 3px solid var(--teal);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      font-weight: 600;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      background: var(--bg);
+    }
+
+    a { color: var(--teal); }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      main { padding: 32px 16px 64px; }
+      h1 { font-size: 26px; }
+      h2 { font-size: 18px; }
+      .header-inner { padding: 12px 16px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">Kypo</a>
+    <div class="header-controls">
+      <nav class="nav-links">
+        <a href="#privacy" class="active" data-target="privacy">Privacy Policy</a>
+        <a href="#terms" data-target="terms">Terms &amp; Conditions</a>
+      </nav>
+      <select id="lang" aria-label="Language">
+        <option value="en">English</option>
+        <option value="pt">Português</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="it">Italiano</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- PRIVACY POLICY                                                         -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── EN ── -->
+<section class="doc-section visible" id="privacy-en" data-doc="privacy" data-lang="en">
+<h1>Privacy Policy</h1>
+<p class="effective">Effective: February 13, 2026 &middot; Tasso Software Studio &middot; Switzerland</p>
+
+<h2>1. Who We Are</h2>
+<p>Kypo is developed by <strong>Tasso Software Studio</strong>, based in Switzerland. For privacy inquiries, contact us at <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>2. Zero-Knowledge Architecture</h2>
+<div class="highlight">
+  <strong>Kypo cannot read your data.</strong> All family content (notes, tasks, calendar events, budgets, shopping lists) is encrypted locally on your device using <strong>AES-256-GCM</strong> before it ever leaves the device. Encryption keys are derived from credentials that Tasso Software Studio never receives, stores, or can reconstruct.
+</div>
+<p>This means:</p>
+<ul>
+  <li>We hold <strong>zero encryption keys</strong>.</li>
+  <li>We have <strong>zero access</strong> to the content of your V2 Vault.</li>
+  <li>Even if compelled by law, we cannot produce your decrypted data because we do not possess the means to decrypt it.</li>
+</ul>
+
+<h2>3. What Data We Process</h2>
+<table>
+  <thead><tr><th>Category</th><th>Data</th><th>Purpose</th></tr></thead>
+  <tbody>
+    <tr><td>Account</td><td>Email address, authentication provider (Google, Apple, email)</td><td>User identity &amp; login</td></tr>
+    <tr><td>Family Metadata</td><td>Family ID, member IDs, migration status</td><td>Cross-device sync orchestration</td></tr>
+    <tr><td>Encrypted Vault</td><td>AES-256-GCM ciphertext blob</td><td>Stored on your Cloud Anchor &mdash; opaque to us</td></tr>
+    <tr><td>Subscription</td><td>Tier, purchase receipts</td><td>Feature entitlement</td></tr>
+    <tr><td>Device Tokens</td><td>FCM push tokens</td><td>Notifications (optional)</td></tr>
+  </tbody>
+</table>
+<p>We do <strong>not</strong> collect analytics, advertising identifiers, location data, or contact lists.</p>
+
+<h2>4. Cloud Anchor &mdash; Your Storage, Your Choice</h2>
+<p>Kypo syncs your encrypted vault to a <strong>Cloud Anchor</strong> that you select:</p>
+<ul>
+  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Privacy Policy</a></li>
+  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+</ul>
+<p>Kypo stores the encrypted blob in the provider's <em>app-specific hidden folder</em>. The cloud provider can see the blob but <strong>cannot decrypt</strong> its contents. Their respective privacy policies govern the storage layer.</p>
+
+<h2>5. Legal Basis for Processing</h2>
+<p>Under the Swiss Federal Act on Data Protection (nFADP) and the EU General Data Protection Regulation (GDPR):</p>
+<ul>
+  <li><strong>Contract performance</strong> (Art. 6(1)(b) GDPR): Processing your account data to provide the service you requested.</li>
+  <li><strong>Legitimate interest</strong> (Art. 6(1)(f) GDPR): Anti-abuse measures and service stability.</li>
+  <li><strong>Consent</strong>: Push notifications are opt-in.</li>
+</ul>
+
+<h2>6. Data Transfers</h2>
+<p>Your encrypted vault may be stored by Google, Microsoft, or Apple in data centres outside Switzerland and the EU. Switzerland is recognised by the EU as providing adequate data protection. For transfers to the US, these providers participate in the EU-US Data Privacy Framework.</p>
+
+<h2>7. Data Retention</h2>
+<ul>
+  <li><strong>Account data</strong>: Retained while your account exists. Deleted within 30 days of account deletion.</li>
+  <li><strong>Encrypted vault</strong>: Stored on your Cloud Anchor under your control. Kypo does not retain a copy.</li>
+  <li><strong>Legacy data</strong>: After migration from the legacy FamilyOrganizer app, legacy collections are permanently archived and blocked.</li>
+</ul>
+
+<h2>8. Your Rights</h2>
+<p>You have the right to:</p>
+<ul>
+  <li><strong>Access</strong> your personal data.</li>
+  <li><strong>Rectify</strong> inaccurate data.</li>
+  <li><strong>Erase</strong> your data (&ldquo;right to be forgotten&rdquo;).</li>
+  <li><strong>Port</strong> your data to another service.</li>
+  <li><strong>Object</strong> to processing based on legitimate interest.</li>
+  <li><strong>Lodge a complaint</strong> with the Swiss Federal Data Protection and Information Commissioner (FDPIC) or your local EU supervisory authority.</li>
+</ul>
+<p>To exercise any right, email <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>9. Children</h2>
+<p>Kypo is intended for users aged <strong>16 or older</strong>. We do not knowingly collect data from children under 16. If you believe a child under 16 has created an account, please contact us and we will promptly delete it.</p>
+
+<h2>10. Security</h2>
+<p>Beyond zero-knowledge encryption, we employ TLS for all network communication, Firestore security rules restricting data access to authenticated family members, and transaction-safe migration locking to prevent data races.</p>
+
+<h2>11. Changes to This Policy</h2>
+<p>We may update this policy to reflect changes in the law or our practices. Material changes will be communicated via an in-app notice at least 14 days before they take effect. The &ldquo;Effective&rdquo; date at the top indicates the current version.</p>
+
+<h2>12. Contact</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Jurisdiction: Switzerland</p>
+</section>
+
+<!-- ── PT ── -->
+<section class="doc-section" id="privacy-pt" data-doc="privacy" data-lang="pt">
+<h1>Política de Privacidade</h1>
+<p class="effective">Em vigor: 13 de fevereiro de 2026 &middot; Tasso Software Studio &middot; Suíça</p>
+
+<h2>1. Quem Somos</h2>
+<p>O Kypo é desenvolvido pela <strong>Tasso Software Studio</strong>, sediada na Suíça. Para questões de privacidade, contacte-nos em <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>2. Arquitetura de Conhecimento Zero</h2>
+<div class="highlight">
+  <strong>O Kypo não consegue ler os seus dados.</strong> Todo o conteúdo familiar (notas, tarefas, eventos de calendário, orçamentos, listas de compras) é encriptado localmente no seu dispositivo usando <strong>AES-256-GCM</strong> antes de sair do dispositivo. As chaves de encriptação derivam de credenciais que a Tasso Software Studio nunca recebe, armazena ou pode reconstruir.
+</div>
+<p>Isto significa:</p>
+<ul>
+  <li>Não possuímos <strong>nenhuma chave de encriptação</strong>.</li>
+  <li>Temos <strong>zero acesso</strong> ao conteúdo do seu V2 Vault.</li>
+  <li>Mesmo que obrigados por lei, não podemos fornecer os seus dados desencriptados porque não possuímos os meios para o fazer.</li>
+</ul>
+
+<h2>3. Dados que Processamos</h2>
+<table>
+  <thead><tr><th>Categoria</th><th>Dados</th><th>Finalidade</th></tr></thead>
+  <tbody>
+    <tr><td>Conta</td><td>Endereço de email, fornecedor de autenticação</td><td>Identidade do utilizador e login</td></tr>
+    <tr><td>Metadados Familiares</td><td>ID da família, IDs dos membros, estado de migração</td><td>Orquestração de sincronização entre dispositivos</td></tr>
+    <tr><td>Vault Encriptado</td><td>Blob cifrado AES-256-GCM</td><td>Armazenado no seu Cloud Anchor &mdash; opaco para nós</td></tr>
+    <tr><td>Subscrição</td><td>Nível, recibos de compra</td><td>Acesso a funcionalidades</td></tr>
+    <tr><td>Tokens de Dispositivo</td><td>Tokens push FCM</td><td>Notificações (opcional)</td></tr>
+  </tbody>
+</table>
+<p><strong>Não</strong> recolhemos dados analíticos, identificadores publicitários, dados de localização ou listas de contactos.</p>
+
+<h2>4. Cloud Anchor &mdash; O Seu Armazenamento, A Sua Escolha</h2>
+<p>O Kypo sincroniza o seu vault encriptado com um <strong>Cloud Anchor</strong> à sua escolha:</p>
+<ul>
+  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade</a></li>
+  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Política de Privacidade</a></li>
+  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidade</a></li>
+</ul>
+<p>O Kypo armazena o blob encriptado na <em>pasta oculta específica da aplicação</em> do fornecedor. O fornecedor pode ver o blob mas <strong>não consegue desencriptar</strong> o seu conteúdo.</p>
+
+<h2>5. Base Legal para o Processamento</h2>
+<p>Nos termos da Lei Federal Suíça de Proteção de Dados (nLPD) e do Regulamento Geral de Proteção de Dados da UE (RGPD):</p>
+<ul>
+  <li><strong>Execução de contrato</strong> (Art. 6(1)(b) RGPD): Processamento dos dados da sua conta para prestar o serviço solicitado.</li>
+  <li><strong>Interesse legítimo</strong> (Art. 6(1)(f) RGPD): Medidas anti-abuso e estabilidade do serviço.</li>
+  <li><strong>Consentimento</strong>: As notificações push são opcionais.</li>
+</ul>
+
+<h2>6. Transferências de Dados</h2>
+<p>O seu vault encriptado pode ser armazenado pela Google, Microsoft ou Apple em centros de dados fora da Suíça e da UE. A Suíça é reconhecida pela UE como proporcionando proteção de dados adequada. Para transferências para os EUA, estes fornecedores participam no EU-US Data Privacy Framework.</p>
+
+<h2>7. Retenção de Dados</h2>
+<ul>
+  <li><strong>Dados da conta</strong>: Mantidos enquanto a sua conta existir. Eliminados no prazo de 30 dias após a eliminação da conta.</li>
+  <li><strong>Vault encriptado</strong>: Armazenado no seu Cloud Anchor sob o seu controlo. O Kypo não retém uma cópia.</li>
+  <li><strong>Dados legados</strong>: Após a migração da aplicação legada FamilyOrganizer, as coleções legadas são permanentemente arquivadas e bloqueadas.</li>
+</ul>
+
+<h2>8. Os Seus Direitos</h2>
+<p>Tem o direito de:</p>
+<ul>
+  <li><strong>Aceder</strong> aos seus dados pessoais.</li>
+  <li><strong>Retificar</strong> dados incorretos.</li>
+  <li><strong>Apagar</strong> os seus dados (&ldquo;direito ao esquecimento&rdquo;).</li>
+  <li><strong>Portar</strong> os seus dados para outro serviço.</li>
+  <li><strong>Opor-se</strong> ao processamento baseado em interesse legítimo.</li>
+  <li><strong>Apresentar reclamação</strong> junto do Encarregado Federal Suíço de Proteção de Dados (PFPDT) ou da sua autoridade supervisora local da UE.</li>
+</ul>
+<p>Para exercer qualquer direito, envie email para <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>9. Crianças</h2>
+<p>O Kypo destina-se a utilizadores com <strong>16 anos ou mais</strong>. Não recolhemos intencionalmente dados de menores de 16 anos.</p>
+
+<h2>10. Segurança</h2>
+<p>Para além da encriptação de conhecimento zero, utilizamos TLS para todas as comunicações de rede, regras de segurança Firestore que restringem o acesso a membros familiares autenticados, e bloqueio de migração seguro por transação.</p>
+
+<h2>11. Alterações a Esta Política</h2>
+<p>Podemos atualizar esta política. Alterações materiais serão comunicadas via notificação na aplicação pelo menos 14 dias antes de entrarem em vigor.</p>
+
+<h2>12. Contacto</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Jurisdição: Suíça</p>
+</section>
+
+<!-- ── ES ── -->
+<section class="doc-section" id="privacy-es" data-doc="privacy" data-lang="es">
+<h1>Política de Privacidad</h1>
+<p class="effective">Vigente: 13 de febrero de 2026 &middot; Tasso Software Studio &middot; Suiza</p>
+
+<h2>1. Quiénes Somos</h2>
+<p>Kypo es desarrollado por <strong>Tasso Software Studio</strong>, con sede en Suiza. Para consultas sobre privacidad, contáctenos en <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>2. Arquitectura de Conocimiento Cero</h2>
+<div class="highlight">
+  <strong>Kypo no puede leer sus datos.</strong> Todo el contenido familiar (notas, tareas, eventos de calendario, presupuestos, listas de compras) se cifra localmente en su dispositivo usando <strong>AES-256-GCM</strong> antes de salir del dispositivo. Las claves de cifrado se derivan de credenciales que Tasso Software Studio nunca recibe, almacena ni puede reconstruir.
+</div>
+<p>Esto significa:</p>
+<ul>
+  <li>No poseemos <strong>ninguna clave de cifrado</strong>.</li>
+  <li>Tenemos <strong>cero acceso</strong> al contenido de su V2 Vault.</li>
+  <li>Incluso si se nos obliga legalmente, no podemos producir sus datos descifrados porque no poseemos los medios para hacerlo.</li>
+</ul>
+
+<h2>3. Datos que Procesamos</h2>
+<table>
+  <thead><tr><th>Categoría</th><th>Datos</th><th>Finalidad</th></tr></thead>
+  <tbody>
+    <tr><td>Cuenta</td><td>Dirección de correo electrónico, proveedor de autenticación</td><td>Identidad del usuario e inicio de sesión</td></tr>
+    <tr><td>Metadatos Familiares</td><td>ID familiar, IDs de miembros, estado de migración</td><td>Orquestación de sincronización entre dispositivos</td></tr>
+    <tr><td>Vault Cifrado</td><td>Blob cifrado AES-256-GCM</td><td>Almacenado en su Cloud Anchor &mdash; opaco para nosotros</td></tr>
+    <tr><td>Suscripción</td><td>Nivel, recibos de compra</td><td>Acceso a funcionalidades</td></tr>
+    <tr><td>Tokens de Dispositivo</td><td>Tokens push FCM</td><td>Notificaciones (opcional)</td></tr>
+  </tbody>
+</table>
+<p><strong>No</strong> recopilamos datos analíticos, identificadores publicitarios, datos de ubicación ni listas de contactos.</p>
+
+<h2>4. Cloud Anchor &mdash; Su Almacenamiento, Su Elección</h2>
+<p>Kypo sincroniza su vault cifrado con un <strong>Cloud Anchor</strong> de su elección:</p>
+<ul>
+  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad</a></li>
+  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Política de Privacidad</a></li>
+  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Política de Privacidad</a></li>
+</ul>
+<p>El proveedor puede ver el blob pero <strong>no puede descifrar</strong> su contenido.</p>
+
+<h2>5. Base Legal para el Procesamiento</h2>
+<p>Según la Ley Federal Suiza de Protección de Datos (nLPD) y el Reglamento General de Protección de Datos de la UE (RGPD):</p>
+<ul>
+  <li><strong>Ejecución de contrato</strong> (Art. 6(1)(b) RGPD): Procesamiento de los datos de su cuenta para prestar el servicio solicitado.</li>
+  <li><strong>Interés legítimo</strong> (Art. 6(1)(f) RGPD): Medidas antiabusos y estabilidad del servicio.</li>
+  <li><strong>Consentimiento</strong>: Las notificaciones push son opcionales.</li>
+</ul>
+
+<h2>6. Transferencias de Datos</h2>
+<p>Su vault cifrado puede ser almacenado por Google, Microsoft o Apple en centros de datos fuera de Suiza y la UE. Suiza es reconocida por la UE como proveedora de protección de datos adecuada.</p>
+
+<h2>7. Retención de Datos</h2>
+<ul>
+  <li><strong>Datos de cuenta</strong>: Se mantienen mientras exista su cuenta. Se eliminan en un plazo de 30 días tras la eliminación de la cuenta.</li>
+  <li><strong>Vault cifrado</strong>: Almacenado en su Cloud Anchor bajo su control.</li>
+  <li><strong>Datos heredados</strong>: Tras la migración de la aplicación heredada FamilyOrganizer, las colecciones heredadas se archivan y bloquean permanentemente.</li>
+</ul>
+
+<h2>8. Sus Derechos</h2>
+<p>Tiene derecho a: <strong>acceder</strong>, <strong>rectificar</strong>, <strong>eliminar</strong>, <strong>portar</strong> sus datos, <strong>oponerse</strong> al procesamiento y <strong>presentar una reclamación</strong> ante la autoridad supervisora suiza o de la UE.</p>
+<p>Contacto: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>9. Menores</h2>
+<p>Kypo está destinado a usuarios de <strong>16 años o más</strong>. No recopilamos intencionalmente datos de menores de 16 años.</p>
+
+<h2>10. Seguridad</h2>
+<p>Además del cifrado de conocimiento cero, empleamos TLS para todas las comunicaciones de red, reglas de seguridad Firestore y bloqueo de migración seguro por transacción.</p>
+
+<h2>11. Cambios en Esta Política</h2>
+<p>Podemos actualizar esta política. Los cambios materiales se comunicarán mediante aviso en la aplicación al menos 14 días antes de su entrada en vigor.</p>
+
+<h2>12. Contacto</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Jurisdicción: Suiza</p>
+</section>
+
+<!-- ── FR ── -->
+<section class="doc-section" id="privacy-fr" data-doc="privacy" data-lang="fr">
+<h1>Politique de Confidentialité</h1>
+<p class="effective">En vigueur : 13 février 2026 &middot; Tasso Software Studio &middot; Suisse</p>
+
+<h2>1. Qui Sommes-Nous</h2>
+<p>Kypo est développé par <strong>Tasso Software Studio</strong>, basé en Suisse. Pour toute question relative à la vie privée, contactez-nous à <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>2. Architecture Zéro Connaissance</h2>
+<div class="highlight">
+  <strong>Kypo ne peut pas lire vos données.</strong> Tout le contenu familial (notes, tâches, événements de calendrier, budgets, listes de courses) est chiffré localement sur votre appareil en <strong>AES-256-GCM</strong> avant de quitter l'appareil. Les clés de chiffrement sont dérivées de vos identifiants que Tasso Software Studio ne reçoit, ne stocke et ne peut reconstituer.
+</div>
+<p>Cela signifie :</p>
+<ul>
+  <li>Nous ne détenons <strong>aucune clé de chiffrement</strong>.</li>
+  <li>Nous avons <strong>zéro accès</strong> au contenu de votre V2 Vault.</li>
+  <li>Même contraints par la loi, nous ne pouvons produire vos données déchiffrées car nous ne possédons pas les moyens de les déchiffrer.</li>
+</ul>
+
+<h2>3. Données que Nous Traitons</h2>
+<table>
+  <thead><tr><th>Catégorie</th><th>Données</th><th>Finalité</th></tr></thead>
+  <tbody>
+    <tr><td>Compte</td><td>Adresse email, fournisseur d'authentification</td><td>Identité utilisateur et connexion</td></tr>
+    <tr><td>Métadonnées Familiales</td><td>ID famille, IDs membres, statut de migration</td><td>Orchestration de synchronisation multi-appareils</td></tr>
+    <tr><td>Vault Chiffré</td><td>Blob chiffré AES-256-GCM</td><td>Stocké sur votre Cloud Anchor &mdash; opaque pour nous</td></tr>
+    <tr><td>Abonnement</td><td>Niveau, reçus d'achat</td><td>Accès aux fonctionnalités</td></tr>
+    <tr><td>Jetons d'Appareil</td><td>Jetons push FCM</td><td>Notifications (optionnel)</td></tr>
+  </tbody>
+</table>
+<p>Nous ne collectons <strong>pas</strong> de données analytiques, d'identifiants publicitaires, de données de localisation ni de listes de contacts.</p>
+
+<h2>4. Cloud Anchor &mdash; Votre Stockage, Votre Choix</h2>
+<ul>
+  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de Confidentialité</a></li>
+  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Politique de Confidentialité</a></li>
+  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Politique de Confidentialité</a></li>
+</ul>
+<p>Le fournisseur peut voir le blob mais <strong>ne peut pas déchiffrer</strong> son contenu.</p>
+
+<h2>5. Base Juridique du Traitement</h2>
+<p>En vertu de la Loi fédérale suisse sur la protection des données (nLPD) et du Règlement Général sur la Protection des Données (RGPD) :</p>
+<ul>
+  <li><strong>Exécution du contrat</strong> (Art. 6(1)(b) RGPD).</li>
+  <li><strong>Intérêt légitime</strong> (Art. 6(1)(f) RGPD) : Mesures anti-abus et stabilité du service.</li>
+  <li><strong>Consentement</strong> : Les notifications push sont facultatives.</li>
+</ul>
+
+<h2>6. Transferts de Données</h2>
+<p>Votre vault chiffré peut être stocké par Google, Microsoft ou Apple dans des centres de données hors de Suisse et de l'UE. La Suisse est reconnue par l'UE comme offrant une protection des données adéquate.</p>
+
+<h2>7. Conservation des Données</h2>
+<ul>
+  <li><strong>Données de compte</strong> : Conservées tant que votre compte existe. Supprimées dans les 30 jours suivant la suppression du compte.</li>
+  <li><strong>Vault chiffré</strong> : Stocké sur votre Cloud Anchor sous votre contrôle.</li>
+  <li><strong>Données héritées</strong> : Après migration depuis l'ancienne application FamilyOrganizer, les collections héritées sont définitivement archivées et bloquées.</li>
+</ul>
+
+<h2>8. Vos Droits</h2>
+<p>Vous avez le droit d'<strong>accéder</strong>, <strong>rectifier</strong>, <strong>effacer</strong>, <strong>porter</strong> vos données, de vous <strong>opposer</strong> au traitement et de <strong>déposer une plainte</strong> auprès du PFPDT suisse ou de votre autorité de contrôle UE locale.</p>
+<p>Contact : <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>9. Mineurs</h2>
+<p>Kypo est destiné aux utilisateurs de <strong>16 ans ou plus</strong>. Nous ne collectons pas sciemment de données d'enfants de moins de 16 ans.</p>
+
+<h2>10. Sécurité</h2>
+<p>Au-delà du chiffrement zéro connaissance, nous utilisons TLS pour toutes les communications réseau, des règles de sécurité Firestore et un verrouillage de migration sécurisé par transaction.</p>
+
+<h2>11. Modifications de Cette Politique</h2>
+<p>Nous pouvons mettre à jour cette politique. Les modifications substantielles seront communiquées via un avis dans l'application au moins 14 jours avant leur entrée en vigueur.</p>
+
+<h2>12. Contact</h2>
+<p>Tasso Software Studio<br>
+Email : <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Juridiction : Suisse</p>
+</section>
+
+<!-- ── DE ── -->
+<section class="doc-section" id="privacy-de" data-doc="privacy" data-lang="de">
+<h1>Datenschutzerklärung</h1>
+<p class="effective">Gültig ab: 13. Februar 2026 &middot; Tasso Software Studio &middot; Schweiz</p>
+
+<h2>1. Wer Wir Sind</h2>
+<p>Kypo wird von <strong>Tasso Software Studio</strong> mit Sitz in der Schweiz entwickelt. Für Datenschutzanfragen kontaktieren Sie uns unter <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>2. Zero-Knowledge-Architektur</h2>
+<div class="highlight">
+  <strong>Kypo kann Ihre Daten nicht lesen.</strong> Alle Familieninhalte (Notizen, Aufgaben, Kalendereinträge, Budgets, Einkaufslisten) werden lokal auf Ihrem Gerät mit <strong>AES-256-GCM</strong> verschlüsselt, bevor sie das Gerät verlassen. Die Verschlüsselungsschlüssel werden aus Anmeldedaten abgeleitet, die Tasso Software Studio niemals erhält, speichert oder rekonstruieren kann.
+</div>
+<p>Das bedeutet:</p>
+<ul>
+  <li>Wir besitzen <strong>keine Verschlüsselungsschlüssel</strong>.</li>
+  <li>Wir haben <strong>keinen Zugang</strong> zum Inhalt Ihres V2 Vault.</li>
+  <li>Selbst bei gesetzlicher Verpflichtung können wir Ihre entschlüsselten Daten nicht herausgeben, da wir nicht über die Mittel zur Entschlüsselung verfügen.</li>
+</ul>
+
+<h2>3. Welche Daten Wir Verarbeiten</h2>
+<table>
+  <thead><tr><th>Kategorie</th><th>Daten</th><th>Zweck</th></tr></thead>
+  <tbody>
+    <tr><td>Konto</td><td>E-Mail-Adresse, Authentifizierungsanbieter</td><td>Benutzeridentität und Anmeldung</td></tr>
+    <tr><td>Familien-Metadaten</td><td>Familien-ID, Mitglieder-IDs, Migrationsstatus</td><td>Geräteübergreifende Synchronisierung</td></tr>
+    <tr><td>Verschlüsselter Vault</td><td>AES-256-GCM-verschlüsselter Blob</td><td>Auf Ihrem Cloud Anchor gespeichert &mdash; für uns undurchsichtig</td></tr>
+    <tr><td>Abonnement</td><td>Stufe, Kaufbelege</td><td>Funktionszugang</td></tr>
+    <tr><td>Geräte-Token</td><td>FCM-Push-Token</td><td>Benachrichtigungen (optional)</td></tr>
+  </tbody>
+</table>
+<p>Wir erheben <strong>keine</strong> Analysedaten, Werbekennungen, Standortdaten oder Kontaktlisten.</p>
+
+<h2>4. Cloud Anchor &mdash; Ihr Speicher, Ihre Wahl</h2>
+<ul>
+  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzerklärung</a></li>
+</ul>
+<p>Der Anbieter kann den Blob sehen, aber <strong>kann dessen Inhalt nicht entschlüsseln</strong>.</p>
+
+<h2>5. Rechtsgrundlage der Verarbeitung</h2>
+<p>Gemäss dem Schweizer Bundesgesetz über den Datenschutz (nDSG) und der EU-Datenschutzgrundverordnung (DSGVO):</p>
+<ul>
+  <li><strong>Vertragserfüllung</strong> (Art. 6(1)(b) DSGVO).</li>
+  <li><strong>Berechtigtes Interesse</strong> (Art. 6(1)(f) DSGVO): Anti-Missbrauch-Massnahmen und Dienststabilität.</li>
+  <li><strong>Einwilligung</strong>: Push-Benachrichtigungen sind optional.</li>
+</ul>
+
+<h2>6. Datenübermittlungen</h2>
+<p>Ihr verschlüsselter Vault kann von Google, Microsoft oder Apple in Rechenzentren ausserhalb der Schweiz und der EU gespeichert werden. Die Schweiz wird von der EU als Land mit angemessenem Datenschutzniveau anerkannt.</p>
+
+<h2>7. Datenspeicherung</h2>
+<ul>
+  <li><strong>Kontodaten</strong>: Werden aufbewahrt, solange Ihr Konto besteht. Innerhalb von 30 Tagen nach Kontolöschung gelöscht.</li>
+  <li><strong>Verschlüsselter Vault</strong>: Auf Ihrem Cloud Anchor unter Ihrer Kontrolle gespeichert.</li>
+  <li><strong>Altdaten</strong>: Nach der Migration von der alten FamilyOrganizer-App werden die alten Sammlungen dauerhaft archiviert und gesperrt.</li>
+</ul>
+
+<h2>8. Ihre Rechte</h2>
+<p>Sie haben das Recht auf <strong>Auskunft</strong>, <strong>Berichtigung</strong>, <strong>Löschung</strong>, <strong>Datenübertragbarkeit</strong>, <strong>Widerspruch</strong> und <strong>Beschwerde</strong> beim Eidgenössischen Datenschutz- und Öffentlichkeitsbeauftragten (EDÖB) oder Ihrer lokalen EU-Aufsichtsbehörde.</p>
+<p>Kontakt: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>9. Minderjährige</h2>
+<p>Kypo richtet sich an Nutzer ab <strong>16 Jahren</strong>. Wir erheben wissentlich keine Daten von Kindern unter 16 Jahren.</p>
+
+<h2>10. Sicherheit</h2>
+<p>Neben der Zero-Knowledge-Verschlüsselung setzen wir TLS für alle Netzwerkkommunikation, Firestore-Sicherheitsregeln und transaktionssichere Migrationssperren ein.</p>
+
+<h2>11. Änderungen dieser Erklärung</h2>
+<p>Wir können diese Erklärung aktualisieren. Wesentliche Änderungen werden mindestens 14 Tage vor Inkrafttreten per In-App-Benachrichtigung mitgeteilt.</p>
+
+<h2>12. Kontakt</h2>
+<p>Tasso Software Studio<br>
+E-Mail: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Gerichtsstand: Schweiz</p>
+</section>
+
+<!-- ── IT ── -->
+<section class="doc-section" id="privacy-it" data-doc="privacy" data-lang="it">
+<h1>Informativa sulla Privacy</h1>
+<p class="effective">In vigore dal: 13 febbraio 2026 &middot; Tasso Software Studio &middot; Svizzera</p>
+
+<h2>1. Chi Siamo</h2>
+<p>Kypo è sviluppato da <strong>Tasso Software Studio</strong>, con sede in Svizzera. Per richieste sulla privacy, contattaci a <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>2. Architettura Zero-Knowledge</h2>
+<div class="highlight">
+  <strong>Kypo non può leggere i tuoi dati.</strong> Tutti i contenuti familiari (note, attività, eventi del calendario, budget, liste della spesa) vengono crittografati localmente sul tuo dispositivo usando <strong>AES-256-GCM</strong> prima di lasciare il dispositivo. Le chiavi di crittografia derivano da credenziali che Tasso Software Studio non riceve, non memorizza e non può ricostruire.
+</div>
+<p>Questo significa:</p>
+<ul>
+  <li>Non possediamo <strong>alcuna chiave di crittografia</strong>.</li>
+  <li>Abbiamo <strong>zero accesso</strong> al contenuto del tuo V2 Vault.</li>
+  <li>Anche se obbligati per legge, non possiamo produrre i tuoi dati decifrati perché non possediamo i mezzi per farlo.</li>
+</ul>
+
+<h2>3. Dati che Trattiamo</h2>
+<table>
+  <thead><tr><th>Categoria</th><th>Dati</th><th>Finalità</th></tr></thead>
+  <tbody>
+    <tr><td>Account</td><td>Indirizzo email, fornitore di autenticazione</td><td>Identità utente e accesso</td></tr>
+    <tr><td>Metadati Familiari</td><td>ID famiglia, ID membri, stato di migrazione</td><td>Orchestrazione sincronizzazione multi-dispositivo</td></tr>
+    <tr><td>Vault Crittografato</td><td>Blob crittografato AES-256-GCM</td><td>Memorizzato sul tuo Cloud Anchor &mdash; opaco per noi</td></tr>
+    <tr><td>Abbonamento</td><td>Livello, ricevute di acquisto</td><td>Accesso alle funzionalità</td></tr>
+    <tr><td>Token Dispositivo</td><td>Token push FCM</td><td>Notifiche (opzionale)</td></tr>
+  </tbody>
+</table>
+<p><strong>Non</strong> raccogliamo dati analitici, identificatori pubblicitari, dati di posizione o liste di contatti.</p>
+
+<h2>4. Cloud Anchor &mdash; Il Tuo Spazio, La Tua Scelta</h2>
+<ul>
+  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Informativa sulla Privacy</a></li>
+  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Informativa sulla Privacy</a></li>
+  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Informativa sulla Privacy</a></li>
+</ul>
+<p>Il fornitore può vedere il blob ma <strong>non può decifrarne</strong> il contenuto.</p>
+
+<h2>5. Base Giuridica del Trattamento</h2>
+<p>Ai sensi della Legge federale svizzera sulla protezione dei dati (nLPD) e del Regolamento Generale sulla Protezione dei Dati dell'UE (GDPR):</p>
+<ul>
+  <li><strong>Esecuzione del contratto</strong> (Art. 6(1)(b) GDPR).</li>
+  <li><strong>Interesse legittimo</strong> (Art. 6(1)(f) GDPR): Misure anti-abuso e stabilità del servizio.</li>
+  <li><strong>Consenso</strong>: Le notifiche push sono facoltative.</li>
+</ul>
+
+<h2>6. Trasferimenti di Dati</h2>
+<p>Il tuo vault crittografato può essere memorizzato da Google, Microsoft o Apple in data center al di fuori della Svizzera e dell'UE. La Svizzera è riconosciuta dall'UE come paese con un livello adeguato di protezione dei dati.</p>
+
+<h2>7. Conservazione dei Dati</h2>
+<ul>
+  <li><strong>Dati dell'account</strong>: Conservati finché il tuo account esiste. Eliminati entro 30 giorni dalla cancellazione dell'account.</li>
+  <li><strong>Vault crittografato</strong>: Memorizzato sul tuo Cloud Anchor sotto il tuo controllo.</li>
+  <li><strong>Dati legacy</strong>: Dopo la migrazione dall'app legacy FamilyOrganizer, le collezioni legacy vengono permanentemente archiviate e bloccate.</li>
+</ul>
+
+<h2>8. I Tuoi Diritti</h2>
+<p>Hai il diritto di <strong>accedere</strong>, <strong>rettificare</strong>, <strong>cancellare</strong>, <strong>portare</strong> i tuoi dati, di <strong>opporti</strong> al trattamento e di <strong>presentare un reclamo</strong> presso l'IFPDT svizzero o la tua autorità di controllo UE locale.</p>
+<p>Contatto: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a>.</p>
+
+<h2>9. Minori</h2>
+<p>Kypo è destinato a utenti di <strong>16 anni o più</strong>. Non raccogliamo consapevolmente dati di minori di 16 anni.</p>
+
+<h2>10. Sicurezza</h2>
+<p>Oltre alla crittografia zero-knowledge, utilizziamo TLS per tutte le comunicazioni di rete, regole di sicurezza Firestore e blocco di migrazione sicuro per transazione.</p>
+
+<h2>11. Modifiche a Questa Informativa</h2>
+<p>Potremmo aggiornare questa informativa. Le modifiche sostanziali saranno comunicate tramite avviso in-app almeno 14 giorni prima della loro entrata in vigore.</p>
+
+<h2>12. Contatto</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Giurisdizione: Svizzera</p>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+<!-- TERMS & CONDITIONS                                                     -->
+<!-- ════════════════════════════════════════════════════════════════════════ -->
+
+<!-- ── EN ── -->
+<section class="doc-section" id="terms-en" data-doc="terms" data-lang="en">
+<h1>Terms &amp; Conditions</h1>
+<p class="effective">Effective: February 13, 2026 &middot; Tasso Software Studio &middot; Switzerland</p>
+
+<h2>1. Acceptance</h2>
+<p>By creating an account or using Kypo, you agree to these Terms and our <a href="#privacy">Privacy Policy</a>. If you do not agree, do not use the service. You must be at least <strong>16 years old</strong> to use Kypo.</p>
+
+<h2>2. Description of Service</h2>
+<p>Kypo is a household management application that provides shared notes, tasks, calendar events, shopping lists, budgets, and expense group tracking for families and groups. All family data is encrypted locally and synced to a user-selected Cloud Anchor.</p>
+
+<h2>3. Roles &amp; Responsibilities</h2>
+<h3>3.1 Founder</h3>
+<p>The <strong>Founder</strong> is the family member who creates a family and establishes its Cloud Anchor. The Founder is responsible for:</p>
+<ul>
+  <li>Linking a cloud storage provider (Google Drive, OneDrive, or iCloud) to serve as the family&rsquo;s Cloud Anchor.</li>
+  <li>Initiating and overseeing the data migration from the legacy FamilyOrganizer app.</li>
+  <li>Managing family membership (inviting and removing members).</li>
+  <li>Maintaining the encryption key chain for the family. If the Founder loses access to their account, encrypted data may become unrecoverable.</li>
+</ul>
+<h3>3.2 Members</h3>
+<p>Members are invited by the Founder and receive encrypted access to shared family data. Members can create and edit shared content according to the role assigned by the Founder (admin, edit, or view).</p>
+
+<h2>4. Subscription Tiers</h2>
+<table>
+  <thead><tr><th>Tier</th><th>Families</th><th>Expense Groups</th><th>Ads</th><th>Active Projects</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Free</strong></td><td>1</td><td>1</td><td>Yes</td><td>1</td></tr>
+    <tr><td><strong>No Ads</strong></td><td>1</td><td>1</td><td>No</td><td>3</td></tr>
+    <tr><td><strong>Premium</strong></td><td>3</td><td>5</td><td>No</td><td>5 + Advanced Analytics</td></tr>
+  </tbody>
+</table>
+<p>All tiers include a default cap of <strong>5 members</strong> per family or expense group.</p>
+
+<h3>4.1 Member Expansion Slots</h3>
+<p>Additional member slots may be purchased for <strong>&euro;1.00 per slot</strong> per family or expense group. Each purchase permanently increases the member cap by one for that specific family or group. Expansion slot purchases are non-refundable.</p>
+
+<h2>5. Legacy Migration &amp; Sunset</h2>
+<h3>5.1 Migration from FamilyOrganizer</h3>
+<p>Kypo provides a one-time migration path from the legacy FamilyOrganizer app (Firebase project: <code>familyorganizer-a5a3c</code>). The migration extracts, transforms, encrypts, and injects legacy data into the local V2 Vault, then syncs it to your Cloud Anchor.</p>
+<h3>5.2 Permanent Archival</h3>
+<p>Once all members of a family have completed migration, the legacy Firebase collections for that family are <strong>permanently archived and blocked</strong>. This action is irreversible. The legacy app will no longer be able to read from or write to those collections.</p>
+<h3>5.3 Data Integrity</h3>
+<p>The migration process includes an automated integrity audit. Kypo makes best efforts to ensure completeness but does not guarantee that every legacy record will survive transformation if the original data was corrupt or incomplete.</p>
+
+<h2>6. Cloud Anchor &amp; Data Ownership</h2>
+<p>Your encrypted vault is stored on the cloud provider you select. <strong>You own your data.</strong> Kypo acts solely as the encryption and synchronisation layer. If you disconnect your Cloud Anchor or delete your cloud storage, Kypo cannot recover your data.</p>
+
+<h2>7. Limitation of Liability</h2>
+<p>To the maximum extent permitted by Swiss law:</p>
+<ul>
+  <li>Kypo is provided <strong>&ldquo;as is&rdquo;</strong> without warranties of any kind.</li>
+  <li>Tasso Software Studio is not liable for data loss caused by cloud provider outages, lost encryption keys, or user error.</li>
+  <li>Our total aggregate liability shall not exceed the amount you paid for Kypo in the 12 months preceding the claim.</li>
+</ul>
+
+<h2>8. Termination</h2>
+<p>You may delete your account at any time from the app settings. Upon deletion:</p>
+<ul>
+  <li>Your user document and authentication credentials are removed within 30 days.</li>
+  <li>Your encrypted vault on the Cloud Anchor remains under your cloud account&rsquo;s control and is not automatically deleted by Kypo.</li>
+  <li>If you are the Founder and the sole Cloud Anchor holder, other family members will lose sync access.</li>
+</ul>
+
+<h2>9. Governing Law &amp; Disputes</h2>
+<p>These Terms are governed by the laws of <strong>Switzerland</strong>. Any disputes shall be submitted to the competent courts of Switzerland, without prejudice to any mandatory consumer protection provisions of your country of residence under EU law.</p>
+
+<h2>10. Changes to These Terms</h2>
+<p>We may modify these Terms. Material changes will be communicated via an in-app notice at least 14 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
+
+<h2>11. Contact</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Jurisdiction: Switzerland</p>
+</section>
+
+<!-- ── PT ── -->
+<section class="doc-section" id="terms-pt" data-doc="terms" data-lang="pt">
+<h1>Termos e Condições</h1>
+<p class="effective">Em vigor: 13 de fevereiro de 2026 &middot; Tasso Software Studio &middot; Suíça</p>
+
+<h2>1. Aceitação</h2>
+<p>Ao criar uma conta ou utilizar o Kypo, aceita estes Termos e a nossa <a href="#privacy">Política de Privacidade</a>. Deve ter pelo menos <strong>16 anos</strong> para utilizar o Kypo.</p>
+
+<h2>2. Descrição do Serviço</h2>
+<p>O Kypo é uma aplicação de gestão doméstica que fornece notas partilhadas, tarefas, eventos de calendário, listas de compras, orçamentos e acompanhamento de grupos de despesas. Todos os dados são encriptados localmente e sincronizados com o Cloud Anchor escolhido pelo utilizador.</p>
+
+<h2>3. Funções e Responsabilidades</h2>
+<h3>3.1 Fundador</h3>
+<p>O <strong>Fundador</strong> é o membro da família que cria uma família e estabelece o seu Cloud Anchor. O Fundador é responsável por:</p>
+<ul>
+  <li>Vincular um fornecedor de armazenamento na cloud (Google Drive, OneDrive ou iCloud) como Cloud Anchor da família.</li>
+  <li>Iniciar e supervisionar a migração de dados da aplicação legada FamilyOrganizer.</li>
+  <li>Gerir a composição familiar (convidar e remover membros).</li>
+  <li>Manter a cadeia de chaves de encriptação da família.</li>
+</ul>
+<h3>3.2 Membros</h3>
+<p>Os membros são convidados pelo Fundador e recebem acesso encriptado aos dados familiares partilhados, conforme a função atribuída (administrador, edição ou visualização).</p>
+
+<h2>4. Níveis de Subscrição</h2>
+<table>
+  <thead><tr><th>Nível</th><th>Famílias</th><th>Grupos de Despesas</th><th>Anúncios</th><th>Projetos Ativos</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Gratuito</strong></td><td>1</td><td>1</td><td>Sim</td><td>1</td></tr>
+    <tr><td><strong>Sem Anúncios</strong></td><td>1</td><td>1</td><td>Não</td><td>3</td></tr>
+    <tr><td><strong>Premium</strong></td><td>3</td><td>5</td><td>Não</td><td>5 + Análises Avançadas</td></tr>
+  </tbody>
+</table>
+<p>Todos os níveis incluem um limite padrão de <strong>5 membros</strong> por família ou grupo de despesas.</p>
+
+<h3>4.1 Slots de Expansão de Membros</h3>
+<p>Podem ser adquiridos slots adicionais por <strong>1,00 €/slot</strong>. Cada compra aumenta permanentemente o limite de membros em um para essa família ou grupo específico. As compras de slots de expansão não são reembolsáveis.</p>
+
+<h2>5. Migração e Encerramento do Legado</h2>
+<h3>5.1 Migração do FamilyOrganizer</h3>
+<p>O Kypo oferece um caminho de migração único da aplicação legada FamilyOrganizer. A migração extrai, transforma, encripta e injeta os dados legados no V2 Vault local.</p>
+<h3>5.2 Arquivo Permanente</h3>
+<p>Quando todos os membros de uma família concluem a migração, as coleções legadas do Firebase são <strong>permanentemente arquivadas e bloqueadas</strong>. Esta ação é irreversível.</p>
+<h3>5.3 Integridade dos Dados</h3>
+<p>O processo de migração inclui uma auditoria automatizada de integridade. O Kypo faz o melhor esforço para garantir a completude, mas não garante que todos os registos legados sobrevivam à transformação se os dados originais estavam corrompidos ou incompletos.</p>
+
+<h2>6. Cloud Anchor e Propriedade dos Dados</h2>
+<p>O seu vault encriptado é armazenado no fornecedor cloud que selecionar. <strong>Os dados são seus.</strong> O Kypo atua apenas como camada de encriptação e sincronização.</p>
+
+<h2>7. Limitação de Responsabilidade</h2>
+<p>Na medida máxima permitida pela lei suíça:</p>
+<ul>
+  <li>O Kypo é fornecido &ldquo;tal como está&rdquo; sem garantias de qualquer tipo.</li>
+  <li>A Tasso Software Studio não é responsável por perda de dados causada por falhas do fornecedor cloud, perda de chaves de encriptação ou erro do utilizador.</li>
+  <li>A nossa responsabilidade total agregada não excederá o montante que pagou pelo Kypo nos 12 meses anteriores à reclamação.</li>
+</ul>
+
+<h2>8. Rescisão</h2>
+<p>Pode eliminar a sua conta a qualquer momento nas definições da aplicação. Após a eliminação, os dados da conta são removidos em 30 dias. O vault encriptado no Cloud Anchor permanece sob o controlo da sua conta cloud.</p>
+
+<h2>9. Lei Aplicável e Litígios</h2>
+<p>Estes Termos são regidos pelas leis da <strong>Suíça</strong>. Quaisquer litígios serão submetidos aos tribunais competentes da Suíça, sem prejuízo de disposições obrigatórias de proteção do consumidor do seu país de residência.</p>
+
+<h2>10. Alterações a Estes Termos</h2>
+<p>Podemos modificar estes Termos. Alterações materiais serão comunicadas via notificação na aplicação pelo menos 14 dias antes.</p>
+
+<h2>11. Contacto</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Jurisdição: Suíça</p>
+</section>
+
+<!-- ── ES ── -->
+<section class="doc-section" id="terms-es" data-doc="terms" data-lang="es">
+<h1>Términos y Condiciones</h1>
+<p class="effective">Vigente: 13 de febrero de 2026 &middot; Tasso Software Studio &middot; Suiza</p>
+
+<h2>1. Aceptación</h2>
+<p>Al crear una cuenta o usar Kypo, acepta estos Términos y nuestra <a href="#privacy">Política de Privacidad</a>. Debe tener al menos <strong>16 años</strong> para usar Kypo.</p>
+
+<h2>2. Descripción del Servicio</h2>
+<p>Kypo es una aplicación de gestión del hogar que proporciona notas compartidas, tareas, eventos de calendario, listas de compras, presupuestos y seguimiento de grupos de gastos.</p>
+
+<h2>3. Roles y Responsabilidades</h2>
+<h3>3.1 Fundador</h3>
+<p>El <strong>Fundador</strong> es el miembro de la familia que crea una familia y establece su Cloud Anchor. El Fundador es responsable de:</p>
+<ul>
+  <li>Vincular un proveedor de almacenamiento en la nube como Cloud Anchor de la familia.</li>
+  <li>Iniciar y supervisar la migración de datos desde la aplicación heredada FamilyOrganizer.</li>
+  <li>Gestionar la membresía familiar.</li>
+  <li>Mantener la cadena de claves de cifrado de la familia.</li>
+</ul>
+
+<h2>4. Niveles de Suscripción</h2>
+<table>
+  <thead><tr><th>Nivel</th><th>Familias</th><th>Grupos de Gastos</th><th>Anuncios</th><th>Proyectos Activos</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Gratuito</strong></td><td>1</td><td>1</td><td>Sí</td><td>1</td></tr>
+    <tr><td><strong>Sin Anuncios</strong></td><td>1</td><td>1</td><td>No</td><td>3</td></tr>
+    <tr><td><strong>Premium</strong></td><td>3</td><td>5</td><td>No</td><td>5 + Análisis Avanzado</td></tr>
+  </tbody>
+</table>
+<p>Todos los niveles incluyen un límite predeterminado de <strong>5 miembros</strong>.</p>
+
+<h3>4.1 Slots de Expansión de Miembros</h3>
+<p>Se pueden adquirir slots adicionales por <strong>1,00 €/slot</strong>. Las compras son permanentes y no reembolsables.</p>
+
+<h2>5. Migración y Cierre del Legado</h2>
+<p>Kypo proporciona una ruta de migración única desde FamilyOrganizer. Una vez que todos los miembros completan la migración, las colecciones heredadas de Firebase se <strong>archivan y bloquean permanentemente</strong>. Esta acción es irreversible.</p>
+
+<h2>6. Cloud Anchor y Propiedad de los Datos</h2>
+<p><strong>Usted es propietario de sus datos.</strong> Kypo actúa únicamente como capa de cifrado y sincronización.</p>
+
+<h2>7. Limitación de Responsabilidad</h2>
+<p>Kypo se proporciona &ldquo;tal cual&rdquo;. Tasso Software Studio no es responsable de la pérdida de datos causada por fallos del proveedor de nube, pérdida de claves de cifrado o error del usuario.</p>
+
+<h2>8. Rescisión</h2>
+<p>Puede eliminar su cuenta en cualquier momento. Los datos se eliminan en 30 días. El vault cifrado permanece bajo el control de su cuenta de nube.</p>
+
+<h2>9. Ley Aplicable</h2>
+<p>Estos Términos se rigen por las leyes de <strong>Suiza</strong>.</p>
+
+<h2>10. Cambios</h2>
+<p>Los cambios materiales se comunicarán con al menos 14 días de antelación mediante aviso en la aplicación.</p>
+
+<h2>11. Contacto</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Jurisdicción: Suiza</p>
+</section>
+
+<!-- ── FR ── -->
+<section class="doc-section" id="terms-fr" data-doc="terms" data-lang="fr">
+<h1>Conditions Générales d'Utilisation</h1>
+<p class="effective">En vigueur : 13 février 2026 &middot; Tasso Software Studio &middot; Suisse</p>
+
+<h2>1. Acceptation</h2>
+<p>En créant un compte ou en utilisant Kypo, vous acceptez ces Conditions et notre <a href="#privacy">Politique de Confidentialité</a>. Vous devez avoir au moins <strong>16 ans</strong>.</p>
+
+<h2>2. Description du Service</h2>
+<p>Kypo est une application de gestion du foyer offrant notes partagées, tâches, événements de calendrier, listes de courses, budgets et suivi de groupes de dépenses.</p>
+
+<h2>3. Rôles et Responsabilités</h2>
+<h3>3.1 Fondateur</h3>
+<p>Le <strong>Fondateur</strong> est le membre de la famille qui crée une famille et établit son Cloud Anchor. Le Fondateur est responsable de :</p>
+<ul>
+  <li>Lier un fournisseur de stockage cloud comme Cloud Anchor de la famille.</li>
+  <li>Initier et superviser la migration des données depuis l'ancienne application FamilyOrganizer.</li>
+  <li>Gérer les membres de la famille.</li>
+  <li>Maintenir la chaîne de clés de chiffrement de la famille.</li>
+</ul>
+
+<h2>4. Niveaux d'Abonnement</h2>
+<table>
+  <thead><tr><th>Niveau</th><th>Familles</th><th>Groupes de Dépenses</th><th>Publicités</th><th>Projets Actifs</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Gratuit</strong></td><td>1</td><td>1</td><td>Oui</td><td>1</td></tr>
+    <tr><td><strong>Sans Publicités</strong></td><td>1</td><td>1</td><td>Non</td><td>3</td></tr>
+    <tr><td><strong>Premium</strong></td><td>3</td><td>5</td><td>Non</td><td>5 + Analyses Avancées</td></tr>
+  </tbody>
+</table>
+<p>Tous les niveaux incluent une limite par défaut de <strong>5 membres</strong>.</p>
+
+<h3>4.1 Slots d'Expansion de Membres</h3>
+<p>Des slots supplémentaires peuvent être achetés pour <strong>1,00 €/slot</strong>. Les achats sont permanents et non remboursables.</p>
+
+<h2>5. Migration et Fermeture de l'Héritage</h2>
+<p>Kypo fournit un chemin de migration unique depuis FamilyOrganizer. Une fois que tous les membres ont terminé la migration, les collections héritées Firebase sont <strong>définitivement archivées et bloquées</strong>. Cette action est irréversible.</p>
+
+<h2>6. Cloud Anchor et Propriété des Données</h2>
+<p><strong>Vos données vous appartiennent.</strong> Kypo agit uniquement comme couche de chiffrement et de synchronisation.</p>
+
+<h2>7. Limitation de Responsabilité</h2>
+<p>Kypo est fourni &laquo; tel quel &raquo;. Tasso Software Studio n'est pas responsable de la perte de données causée par des pannes du fournisseur cloud, la perte de clés de chiffrement ou une erreur utilisateur.</p>
+
+<h2>8. Résiliation</h2>
+<p>Vous pouvez supprimer votre compte à tout moment. Les données sont supprimées dans les 30 jours.</p>
+
+<h2>9. Droit Applicable</h2>
+<p>Ces Conditions sont régies par le droit <strong>suisse</strong>.</p>
+
+<h2>10. Modifications</h2>
+<p>Les modifications substantielles seront communiquées au moins 14 jours à l'avance via un avis dans l'application.</p>
+
+<h2>11. Contact</h2>
+<p>Tasso Software Studio<br>
+Email : <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Juridiction : Suisse</p>
+</section>
+
+<!-- ── DE ── -->
+<section class="doc-section" id="terms-de" data-doc="terms" data-lang="de">
+<h1>Allgemeine Geschäftsbedingungen</h1>
+<p class="effective">Gültig ab: 13. Februar 2026 &middot; Tasso Software Studio &middot; Schweiz</p>
+
+<h2>1. Annahme</h2>
+<p>Mit der Erstellung eines Kontos oder der Nutzung von Kypo akzeptieren Sie diese Bedingungen und unsere <a href="#privacy">Datenschutzerklärung</a>. Sie müssen mindestens <strong>16 Jahre alt</strong> sein.</p>
+
+<h2>2. Beschreibung des Dienstes</h2>
+<p>Kypo ist eine Haushaltsverwaltungs-App mit gemeinsamen Notizen, Aufgaben, Kalendereinträgen, Einkaufslisten, Budgets und Ausgabengruppen-Tracking.</p>
+
+<h2>3. Rollen und Verantwortlichkeiten</h2>
+<h3>3.1 Gründer</h3>
+<p>Der <strong>Gründer</strong> ist das Familienmitglied, das eine Familie erstellt und deren Cloud Anchor einrichtet. Der Gründer ist verantwortlich für:</p>
+<ul>
+  <li>Die Verknüpfung eines Cloud-Speicheranbieters als Cloud Anchor der Familie.</li>
+  <li>Die Initiierung und Überwachung der Datenmigration von der alten FamilyOrganizer-App.</li>
+  <li>Die Verwaltung der Familienmitgliedschaft.</li>
+  <li>Die Pflege der Verschlüsselungsschlüsselkette der Familie.</li>
+</ul>
+
+<h2>4. Abonnementstufen</h2>
+<table>
+  <thead><tr><th>Stufe</th><th>Familien</th><th>Ausgabengruppen</th><th>Werbung</th><th>Aktive Projekte</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Kostenlos</strong></td><td>1</td><td>1</td><td>Ja</td><td>1</td></tr>
+    <tr><td><strong>Ohne Werbung</strong></td><td>1</td><td>1</td><td>Nein</td><td>3</td></tr>
+    <tr><td><strong>Premium</strong></td><td>3</td><td>5</td><td>Nein</td><td>5 + Erweiterte Analysen</td></tr>
+  </tbody>
+</table>
+<p>Alle Stufen beinhalten ein Standardlimit von <strong>5 Mitgliedern</strong>.</p>
+
+<h3>4.1 Mitgliedererweiterungs-Slots</h3>
+<p>Zusätzliche Slots können für <strong>1,00 €/Slot</strong> erworben werden. Käufe sind dauerhaft und nicht erstattungsfähig.</p>
+
+<h2>5. Legacy-Migration und Abschaltung</h2>
+<p>Kypo bietet einen einmaligen Migrationspfad von FamilyOrganizer. Sobald alle Mitglieder die Migration abgeschlossen haben, werden die alten Firebase-Sammlungen <strong>dauerhaft archiviert und gesperrt</strong>. Diese Aktion ist unwiderruflich.</p>
+
+<h2>6. Cloud Anchor und Dateneigentum</h2>
+<p><strong>Ihre Daten gehören Ihnen.</strong> Kypo fungiert ausschliesslich als Verschlüsselungs- und Synchronisierungsschicht.</p>
+
+<h2>7. Haftungsbeschränkung</h2>
+<p>Kypo wird &bdquo;wie besehen&ldquo; bereitgestellt. Tasso Software Studio haftet nicht für Datenverlust durch Ausfälle des Cloud-Anbieters, verlorene Verschlüsselungsschlüssel oder Benutzerfehler.</p>
+
+<h2>8. Kündigung</h2>
+<p>Sie können Ihr Konto jederzeit löschen. Die Daten werden innerhalb von 30 Tagen entfernt.</p>
+
+<h2>9. Anwendbares Recht</h2>
+<p>Diese Bedingungen unterliegen dem <strong>Schweizer</strong> Recht.</p>
+
+<h2>10. Änderungen</h2>
+<p>Wesentliche Änderungen werden mindestens 14 Tage im Voraus per In-App-Benachrichtigung mitgeteilt.</p>
+
+<h2>11. Kontakt</h2>
+<p>Tasso Software Studio<br>
+E-Mail: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Gerichtsstand: Schweiz</p>
+</section>
+
+<!-- ── IT ── -->
+<section class="doc-section" id="terms-it" data-doc="terms" data-lang="it">
+<h1>Termini e Condizioni</h1>
+<p class="effective">In vigore dal: 13 febbraio 2026 &middot; Tasso Software Studio &middot; Svizzera</p>
+
+<h2>1. Accettazione</h2>
+<p>Creando un account o utilizzando Kypo, accetti questi Termini e la nostra <a href="#privacy">Informativa sulla Privacy</a>. Devi avere almeno <strong>16 anni</strong>.</p>
+
+<h2>2. Descrizione del Servizio</h2>
+<p>Kypo è un'applicazione di gestione domestica che fornisce note condivise, attività, eventi di calendario, liste della spesa, budget e monitoraggio di gruppi di spesa.</p>
+
+<h2>3. Ruoli e Responsabilità</h2>
+<h3>3.1 Fondatore</h3>
+<p>Il <strong>Fondatore</strong> è il membro della famiglia che crea una famiglia e stabilisce il suo Cloud Anchor. Il Fondatore è responsabile di:</p>
+<ul>
+  <li>Collegare un fornitore di archiviazione cloud come Cloud Anchor della famiglia.</li>
+  <li>Avviare e supervisionare la migrazione dei dati dall'app legacy FamilyOrganizer.</li>
+  <li>Gestire i membri della famiglia.</li>
+  <li>Mantenere la catena di chiavi di crittografia della famiglia.</li>
+</ul>
+
+<h2>4. Livelli di Abbonamento</h2>
+<table>
+  <thead><tr><th>Livello</th><th>Famiglie</th><th>Gruppi di Spesa</th><th>Pubblicità</th><th>Progetti Attivi</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Gratuito</strong></td><td>1</td><td>1</td><td>Sì</td><td>1</td></tr>
+    <tr><td><strong>Senza Pubblicità</strong></td><td>1</td><td>1</td><td>No</td><td>3</td></tr>
+    <tr><td><strong>Premium</strong></td><td>3</td><td>5</td><td>No</td><td>5 + Analisi Avanzate</td></tr>
+  </tbody>
+</table>
+<p>Tutti i livelli includono un limite predefinito di <strong>5 membri</strong>.</p>
+
+<h3>4.1 Slot di Espansione Membri</h3>
+<p>Slot aggiuntivi possono essere acquistati per <strong>1,00 €/slot</strong>. Gli acquisti sono permanenti e non rimborsabili.</p>
+
+<h2>5. Migrazione e Chiusura del Legacy</h2>
+<p>Kypo fornisce un percorso di migrazione unico da FamilyOrganizer. Una volta che tutti i membri completano la migrazione, le collezioni legacy Firebase vengono <strong>permanentemente archiviate e bloccate</strong>. Questa azione è irreversibile.</p>
+
+<h2>6. Cloud Anchor e Proprietà dei Dati</h2>
+<p><strong>I tuoi dati sono tuoi.</strong> Kypo agisce esclusivamente come livello di crittografia e sincronizzazione.</p>
+
+<h2>7. Limitazione di Responsabilità</h2>
+<p>Kypo è fornito &ldquo;così com'è&rdquo;. Tasso Software Studio non è responsabile per la perdita di dati causata da guasti del fornitore cloud, perdita di chiavi di crittografia o errore dell'utente.</p>
+
+<h2>8. Risoluzione</h2>
+<p>Puoi eliminare il tuo account in qualsiasi momento. I dati vengono rimossi entro 30 giorni.</p>
+
+<h2>9. Legge Applicabile</h2>
+<p>Questi Termini sono regolati dal diritto <strong>svizzero</strong>.</p>
+
+<h2>10. Modifiche</h2>
+<p>Le modifiche sostanziali saranno comunicate almeno 14 giorni prima tramite avviso in-app.</p>
+
+<h2>11. Contatto</h2>
+<p>Tasso Software Studio<br>
+Email: <a href="mailto:tassosoftwarestudio@gmail.com">tassosoftwarestudio@gmail.com</a><br>
+Giurisdizione: Svizzera</p>
+</section>
+
+</main>
+
+<footer class="footer">
+  &copy; 2026 Tasso Software Studio &middot; Switzerland &middot; All rights reserved.
+</footer>
+
+<script>
+(function () {
+  const langSelect = document.getElementById('lang');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  let currentDoc = 'privacy';
+  let currentLang = 'en';
+
+  function show() {
+    document.querySelectorAll('.doc-section').forEach(s => s.classList.remove('visible'));
+    const target = document.getElementById(`${currentDoc}-${currentLang}`);
+    if (target) target.classList.add('visible');
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.target === currentDoc));
+  }
+
+  langSelect.addEventListener('change', () => { currentLang = langSelect.value; show(); });
+
+  navLinks.forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      currentDoc = a.dataset.target;
+      show();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Auto-detect browser language
+  const browserLang = (navigator.language || '').slice(0, 2).toLowerCase();
+  if (['en', 'pt', 'es', 'fr', 'de', 'it'].includes(browserLang)) {
+    currentLang = browserLang;
+    langSelect.value = browserLang;
+  }
+
+  show();
+})();
+</script>
+</body>
+</html>
