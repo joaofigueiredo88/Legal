@@ -270,21 +270,15 @@
   <tbody>
     <tr><td>Account</td><td>Email address, authentication provider (Google, Apple, email)</td><td>User identity &amp; login</td></tr>
     <tr><td>Family Metadata</td><td>Family ID, member IDs</td><td>Cross-device sync orchestration</td></tr>
-    <tr><td>Encrypted Vault</td><td>AES-256-GCM ciphertext blob</td><td>Stored on your Cloud Anchor &mdash; opaque to us</td></tr>
+    <tr><td>Encrypted Vault</td><td>AES-256-GCM ciphertext blob</td><td>Stored on our secure Firestore backend &mdash; opaque to us</td></tr>
     <tr><td>Subscription</td><td>Tier, purchase receipts</td><td>Feature entitlement</td></tr>
     <tr><td>Device Tokens</td><td>FCM push tokens</td><td>Notifications (optional)</td></tr>
   </tbody>
 </table>
 <p>We do <strong>not</strong> collect analytics, advertising identifiers, location data, or contact lists.</p>
 
-<h2>4. Cloud Anchor &mdash; Your Storage, Your Choice</h2>
-<p>Kypo syncs your encrypted vault to a <strong>Cloud Anchor</strong> that you select:</p>
-<ul>
-  <li><strong>Google Drive</strong> (Google LLC) &mdash; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
-  <li><strong>OneDrive</strong> (Microsoft Corporation) &mdash; <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener">Privacy Policy</a></li>
-  <li><strong>iCloud</strong> (Apple Inc.) &mdash; <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Privacy Policy</a></li>
-</ul>
-<p>Kypo stores the encrypted blob in the provider's <em>app-specific hidden folder</em>. The cloud provider can see the blob but <strong>cannot decrypt</strong> its contents. Their respective privacy policies govern the storage layer.</p>
+<h2>4. Data Storage</h2>
+<p>Kypo syncs your encrypted vault to our secure Firestore backend infrastructure (operated by Google Cloud). The backend can store the data but <strong>cannot decrypt</strong> its contents.</p>
 
 <h2>5. Legal Basis for Processing</h2>
 <p>Under the Swiss Federal Act on Data Protection (nFADP) and the EU General Data Protection Regulation (GDPR):</p>
@@ -295,12 +289,12 @@
 </ul>
 
 <h2>6. Data Transfers</h2>
-<p>Your encrypted vault may be stored by Google, Microsoft, or Apple in data centres outside Switzerland and the EU. Switzerland is recognised by the EU as providing adequate data protection. For transfers to the US, these providers participate in the EU-US Data Privacy Framework.</p>
+<p>Your encrypted vault is stored securely using Google Cloud infrastructure (Firestore). Data may be hosted in data centres outside Switzerland and the EU. Switzerland is recognised by the EU as providing adequate data protection. For transfers to the US, these providers participate in the EU-US Data Privacy Framework.</p>
 
 <h2>7. Data Retention</h2>
 <ul>
   <li><strong>Account data</strong>: Retained while your account exists. Deleted within 30 days of account deletion.</li>
-  <li><strong>Encrypted vault</strong>: Stored on your Cloud Anchor under your control. Kypo does not retain a copy.</li>
+  <li><strong>Encrypted vault</strong>: Stored on our secure Firestore backend. It is permanently deleted if the Founder deletes the family.</li>
 </ul>
 
 <h2>8. Your Rights</h2>
